@@ -5,6 +5,8 @@ class MyText extends StatelessWidget {
   final TextStyle? style;
   final double? fontSize;
   final Color? color;
+  final FontWeight? fontWeight;
+  final TextAlign? textAlign;
 
   const MyText({
     super.key,
@@ -12,13 +14,20 @@ class MyText extends StatelessWidget {
     this.style,
     this.fontSize,
     this.color,
+    this.fontWeight, 
+    this.textAlign
   });
 
   @override
   Widget build(BuildContext context) {
     return Text(
       text,
-      style: style ?? TextStyle(fontSize: fontSize, color: color),
+      textAlign: textAlign,
+      style: style ?? TextStyle(
+        fontSize: fontSize, 
+        color: color,
+        fontWeight: fontWeight,
+      ),
     );
   }
 }
